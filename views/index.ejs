@@ -1,11 +1,51 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<div class="row">
+  <div class="col-lg-6 m-auto ">
+    <% if(errors.length > 0) { %>
+    <ul class="bg-danger text-white rounded py-1">
+      <% for(var i=0; i<errors.length; i++) { %>
+      <li><%= errors[i] %></li>
+      <% } %>
+    </ul>
+    <% } %>
+  </div>
+</div>
+
+<div class="row">
+
+  <form class="form-inline" action="/search" method="post">
+    <div class="form-group m-2">
+      <label for="staticEmail2" class="mr-2">Ville</label>
+      <input type="text" name="search" class="form-control" id="staticEmail2" value="">
+    </div>
+    <button type="submit" class="btn btn-warning text-white btn-search m-2" >Enregister</button>
+  </form>
+</div>
+
+<hr>
+
+<!-- map -->
+<div class="row">
+
+</div>
+
+<!-- todolist -->
+<%
+  for (var i = 0; i<data.length; i++) {%>
+  <div class="row m-2">
+    <div class="col-md-12 border rounded">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="pt-2 title"><%= data[i] %></h4>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-3 text-right py-2">
+          <a href="/delete?id=<%=i%>">
+            <i class="far fa-times-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>

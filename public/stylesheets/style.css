@@ -1,8 +1,22 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ddd;
 }
 
 a {
   color: #00B7FF;
 }
+
+.title {
+  text-transform: capitalize;
+}
+ .body-content {
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 1px 1px 10px;
+ }
+
+ label {
+   font-weight: 700;
+ }
