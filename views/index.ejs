@@ -15,7 +15,7 @@
   <form class="form-inline" action="/search" method="post">
     <div class="form-group m-2">
       <label for="staticEmail2" class="mr-2">Ville</label>
-      <input type="text" name="search" class="form-control" id="staticEmail2" value="">
+      <input type="text" name="search" class="form-control" id="staticEmail2" value="" placeholder="Entrer une ville">
     </div>
     <button type="submit" class="btn btn-warning text-white btn-search m-2" >Enregister</button>
   </form>
@@ -25,7 +25,10 @@
 
 <!-- map -->
 <div class="row">
+  <div id="map" class="col-md-6 offset-3">
 
+    <!--<iframe width="800" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=paris&key=AIzaSyBRE5Tohh3e5TxjlcAqXzL7asi-JRV8ANc" allowfullscreen></iframe>-->
+  </div>
 </div>
 
 <!-- todolist -->
@@ -35,10 +38,16 @@
     <div class="col-md-12 border rounded">
       <div class="row">
         <div class="col-md-3">
-          <h4 class="pt-2 title"><%= data[i] %></h4>
+          <h4 class="pt-2 title"><%= data[i].name %></h4>
         </div>
-        <div class="col-md-6">
-
+        <div class="col-md-6 py-2 mt">
+          <div class="row">
+            <div class="col-md-7 m-auto">
+              <span class="p-2 text-dark"><%= data[i].description %></span>
+              <span class="badge badge-warning col-md-2 p-2 mx-1"><%= data[i].temp_min %> °C</span>
+              <span class="badge badge-secondary col-md-2 p-2 mx-1"><%= data[i].temp_max %> °C</span>
+            </div>
+          </div>
         </div>
         <div class="col-md-3 text-right py-2">
           <a href="/delete?id=<%=i%>">
