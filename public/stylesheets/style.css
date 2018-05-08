@@ -20,5 +20,7 @@ a {
  label {
    font-weight: 700;
  }
- #app {
- }
+#map {
+    height: 400px;
+    width: 100%;
+}
